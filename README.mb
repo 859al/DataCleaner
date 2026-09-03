@@ -1,0 +1,36 @@
+# 🚀 Advanced Custom Template Data Engine
+
+A lightweight, Python-based desktop application built with `tkinter` and `tksheet` designed to view, clean, and format Excel (`.xlsx`, `.xls`) and CSV datasets effortlessly using smart formatting presets and custom parsing masks.
+
+---
+
+## ⚠️ Disclaimer
+> **Student & Learning Project:** This is a simple utility project created for students and learning purposes.
+> **AI-Assisted Development:** This project was developed with the assistance of AI (Artificial Intelligence). Feel free to use, modify, learn from, and expand upon the code!
+
+---
+
+## ✨ Key Features
+
+* **📁 File Support:** Open and load Excel or CSV files directly into an interactive, spreadsheet-style grid.
+* **💾 Export Options:** Save your cleaned data back into Excel (`.xlsx`) or CSV format instantly.
+* **↩️ Undo History:** Tracks changes up to 20 steps back so you can easily revert mistakes.
+* **⚡ Standard Presets:** Quick options to clear empty/NaN cells, convert text to UPPERCASE, lowercase, Title Case, or strip non-alphanumeric characters.
+* **🛠️ Smart Custom Mask Engine:** Format mixed alphanumeric data precisely using escape tokens.
+
+---
+
+## 🔤 Custom Mask Reference Guide
+
+When using the **"Use Custom Mask Below 👇"** option, you can combine literal text characters with these powerful escape codes:
+
+| Mask Code | Action Description | Example |
+| :--- | :--- | :--- |
+| **`/N`** | Extracts the next available **Number**. | `/N/N/N` $\rightarrow$ Grabs 3 numbers |
+| **`/L`** | Extracts the next letter as **UPPERCASE**. | `/L/L` $\rightarrow$ Grabs 2 letters in uppercase |
+| **`/l`** | Extracts the next letter as **lowercase**. | `/l/l` $\rightarrow$ Grabs 2 letters in lowercase |
+| **`/+`** | **Dump Rest:** Dumps all remaining numbers or letters matching the previous command type. | `/N/-/+` $\rightarrow$ Grabs first digit, dumps the rest |
+| **`/*`** | **Keep Raw:** Dumps the exact remainder of the original raw string as-is. | `ID-/*` $\rightarrow$ Appends raw text after "ID-" |
+| **`/-`** | **Cut Off:** Stops parsing and deletes everything after this point. | `/N/N/N/-` $\rightarrow$ Keeps only the first 3 numbers |
+| *Any text* | Anything typed *without* a slash is printed literally. | `SN-/N/N` $\rightarrow$ Prints literal "SN-" followed by numbers |
+
